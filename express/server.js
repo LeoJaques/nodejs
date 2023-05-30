@@ -1,28 +1,26 @@
 const express = require("../node_modules/express")
 const app = express()
 
+
+
 const PORT = 3000
 
 app.get("/", (req, res) => {
-    res.send("Welcome")
+    res.sendFile(__dirname + "/public/index.html")
 })
 
 app.get("/about", (req, res) => {
-    res.send("Welcome, about page")
+    res.sendFile(__dirname + "/public/about.html")
 })
 
 app.get("/contact", (req, res) => {
-    res.send("Welcome, contact page")
+    res.sendFile(__dirname + "/public/contact.html")
 })
 
 app.get("/services", (req, res) => {
     res.send("Welcome, services page")
 })
 
-app.get("/ola/:id/:funcao", (req, res) => {
-    const { id, funcao }  = req.params
-    res.send(`${id} é ${funcao} na empresa AME`)
-})
 
 
 
